@@ -57,3 +57,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+def afficher_ca_total(resultats):
+    total = sum(r["CA_TTC"] for r in resultats)
+    print(f"\n{'='*45}")
+    print(f" CA Total (TTC) de l'entreprise : {total:.2f} DT")
+    print(f"{'='*45}")
+    return total
+
+def identifier_top_produit(resultats):
+    top = max(resultats, key=lambda r: r["CA_Net"])
+    print(f"\n[TOP] Produit avec le plus gros bénéfice : ")
+    print(f" ID={top['ID']} | CA Net={top['CA_Net']:.2f} DT | CA TTC={top['CA_TTC']:.2f} DT")
+    return top
