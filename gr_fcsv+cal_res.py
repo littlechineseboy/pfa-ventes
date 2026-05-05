@@ -1,11 +1,5 @@
-import csv
-import sys
-from pathlib import Path
 
-# ── Configuration globale ────────────────────────────────────────
-TVA_TAUX    = 0.20
-FICHIER_IN  = Path("ventes.csv")
-FICHIER_OUT = Path("resultats_final.csv")
+
 
 DONNEES_INITIALES = [
     [101, 15.0, 3, 10],
