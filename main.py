@@ -1,18 +1,38 @@
+from pathlib import Path
 import csv
 import os
 import sys
 
+
+
 TVA_TAUX = 0.20
 FICHIER_IN = "ventes.csv"
 FICHIER_OUT = "resultats_final.csv"
+
+
+FICHIER_IN = Path("ventes.csv")
+DONNEES_INITIALES = [
+    [101, 15.0, 3, 10],
+    [102, 25.0, 2,  5],
+    [103, 10.0, 5,  0],
+    [104, 30.0, 1, 15],
+    [105, 18.0, 4,  8],
+    [106, 45.0, 2, 20],
+    [107, 12.5, 6,  0],
+]
+
+# ── Utilitaires d'affichage ──────────────────────────────────────
+SEPARATEUR = "=" * 52
+
+
 def generer_fichier_csv(chemin: Path, donnees: list) -> None:
     """Génère le fichier CSV source à partir des données initiales."""
     with chemin.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["ID", "Prix", "Quantite", "Remise"])
         writer.writerows(donnees)
-    ok(f"'{chemin}' généré ({len(donnees)} produits).")
-    
+    print(f"'{chemin}' généré ({len(donnees)} produits).")
+
 def calculer_resultats(chemin: Path) -> list[dict]:
     
     resultats = []
@@ -51,9 +71,9 @@ def calculer_resultats(chemin: Path) -> list[dict]:
                 })
 
             except (ValueError, KeyError) as e:
-                alerte(f"Ligne {numero_ligne} ignorée — {e}")
+                print(f"Ligne {numero_ligne} ignorée — {e}")
 
-    ok(f"{len(resultats)} ligne(s) calculée(s) avec succès.")
+    print (f"{len(resultats)} ligne(s) calculée(s) avec succès.")
     return resultats
 def afficher_ca_total(resultats):
     total = sum(r["CA_TTC"] for r in resultats)
@@ -110,7 +130,7 @@ def afficher_graphiques(resultats):
     print("[OK] Graphiques sauvegardés → graphiques_ventes.png")
 
 def main():
-    generer_fichier_csv()
+    generer_fichier_csv(FICHIER_IN, DONNEES_INITIALES)
     resultats = calculer_resultats(FICHIER_IN)
     afficher_ca_total(resultats)
     identifier_top_produit(resultats)
