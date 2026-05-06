@@ -18,7 +18,7 @@ Le script génère un fichier CSV de ventes, effectue les calculs financiers, af
 - Export de `resultats_final.csv`
 - Visualisation avec deux graphiques Matplotlib
 
-##LINK de presentation 
+## LINK de presentation 
 ```bash
 https://prezi.com/view/7MU1UitqMwUn5F6B6phI/?referral_token=Go125xlnB3FN
  ```
