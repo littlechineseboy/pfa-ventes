@@ -37,8 +37,7 @@ Le script génère un fichier CSV de ventes, effectue les calculs financiers, af
 ### 2. Cloner le dépôt
 
 ```bash
-git clone https://github.com/firas-doctor/automatisation-ventes
-cd pfa_ventes
+git clone https://github.com/littlechineseboy/pfa-ventes
 ```
 
 ### 3. Créer et activer l'environnement virtuel
