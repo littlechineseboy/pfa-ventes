@@ -27,10 +27,41 @@ Le script génère un fichier CSV de ventes, effectue les calculs financiers, af
 | `resultats_final.csv` | Résultats calculés exportés |
 | `graphiques_ventes.png` | Graphiques générés |
 
-## Installation
+##  Installation & Configuration
+
+### 1. Prérequis
+
+- Python **3.10+** installé sur votre machine
+- Git installé
+
+### 2. Cloner le dépôt
+
+```bash
+git clone https://github.com/firas-doctor/automatisation-ventes
+cd pfa_ventes
+```
+
+### 3. Créer et activer l'environnement virtuel
+
+**Windows (PowerShell) :**
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+
+**Windows (CMD) :**
+```cmd
+python -m venv venv
+venv\Scripts\activate.bat
+```
+
+>  Votre terminal affichera `(venv)` devant le prompt une fois activé.
+
+##  Installer les dépendances
 
 ```bash
 pip install matplotlib
+pip install -r requirements.txt
 ```
 
 ## Utilisation
