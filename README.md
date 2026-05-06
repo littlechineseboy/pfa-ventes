@@ -18,6 +18,10 @@ Le script génère un fichier CSV de ventes, effectue les calculs financiers, af
 - Export de `resultats_final.csv`
 - Visualisation avec deux graphiques Matplotlib
 
+##LINK de presentation 
+```bash
+https://prezi.com/view/7MU1UitqMwUn5F6B6phI/?referral_token=Go125xlnB3FN
+ ```
 ## Structure du projet
 
 | Fichier | Description |
@@ -82,4 +86,4 @@ python main.py
 
 - **Mazen** — Export, graphiques, main()
 - **Firas** — Calculs, affichage CA Total, top produit
-- **Zyra** — Génération CSV, lecture dynamique
+- **Mariem** — Génération CSV, lecture dynamique
